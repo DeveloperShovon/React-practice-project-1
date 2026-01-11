@@ -30,7 +30,14 @@ export default function Todo({ todo, onChange, onDelete }) {
       <input
         type="checkbox"
         checked={todo.completed}
-        // onChange={}  // You can implement toggle functionality here if needed
+        onChange={(e)=>{
+          onChange({
+            id: todo.id,
+            title: todo.title,
+            completed: e.target.checked
+          })
+          
+        }}
       />
       {todoContant}
       <button onClick={() => onDelete(todo.id)}>Delete</button>

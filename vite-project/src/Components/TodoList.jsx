@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Todo from "./Todo";
 import initialTodos from "../Data/initialTodos";
+import maxTodoId from "../Utilits/maxTodoId";
 
 export default function TodoList() {
   const [todos, setTodos] = useState(initialTodos);
@@ -16,7 +17,7 @@ export default function TodoList() {
           return {
             ...t,
             title: todo.title,
-            completed: false,
+            completed: todo.completed,
           };
         }
 
@@ -42,7 +43,7 @@ export default function TodoList() {
     <>
       <ul>
         {todos.map((todo) => (
-          <li>
+          <li key={todo.id}>
             <Todo
               key={todo.id}
               todo={todo}

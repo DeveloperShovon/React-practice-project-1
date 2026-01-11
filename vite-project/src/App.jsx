@@ -5,8 +5,11 @@ import TodoList from './Components/TodoList.jsx'
 function App() {
 
   return (
-    <AddTodos/>,
-    <TodoList/>
+    <>
+       <AddTodos/>
+      <TodoList/>
+    </>
+
   )
 }
 

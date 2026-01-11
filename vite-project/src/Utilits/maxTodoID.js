@@ -1,12 +1,14 @@
-export default function maxTodoId(todos){
+ function maxTodoId(todos){
     if (todos.id===0){
         return 1
     }
 
-    const maxid = todos.reduce((maxid, todoid) => {
+    const maxId = todos.reduce((maxid, todoid) => {
         Math.max(maxid , todoid)
     }, 0)
 
-    return maxid + 1
+    return maxId + 1
 
 }
+
+export default maxTodoId;
