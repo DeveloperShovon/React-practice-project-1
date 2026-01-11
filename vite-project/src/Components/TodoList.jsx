@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Todo from "./Todo";
 import initialTodos from "../Data/initialTodos";
-import maxTodoId from "../Utilits/maxTodoId";
 
 export default function TodoList() {
   const [todos, setTodos] = useState(initialTodos);
