@@ -1,10 +1,12 @@
+ 
+ 
  function maxTodoId(todos){
-    if (todos.id===0){
+    if (todos.length === 0){
         return 1
     }
 
-    const maxId = todos.reduce((maxid, todoid) => {
-        Math.max(maxid , todoid)
+    const maxId = todos.reduce((maxid, todo) => {
+       return Math.max(maxid , todo.id)
     }, 0)
 
     return maxId + 1

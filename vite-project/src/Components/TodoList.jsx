@@ -1,43 +1,12 @@
-import { useState } from "react";
+
 import Todo from "./Todo";
-import initialTodos from "../Data/initialTodos";
-import maxTodoId from "../Utilits/maxTodoId";
 
-export default function TodoList() {
-  const [todos, setTodos] = useState(initialTodos);
 
-  const handleDelete = (id) => {
-    setTodos(todos.filter((t) => t.id !== id));
-  };
 
-  const handleChange = (todo) => {
-    setTodos(
-      todos.map((t) => {
-        if (t.id === todo.id) {
-          return {
-            ...t,
-            title: todo.title,
-            completed: todo.completed,
-          };
-        }
+export default function TodoList({ todos, onChange, onDelete }) {
+  
 
-        return {
-          ...t,
-        };
-      })
-    );
-  };
-
-  const handleAdd = (title) => {
-    setTodos([
-      ...todos,
-      {
-        id: maxTodoId(todos),
-        title: title,
-        completed: false,
-      },
-    ]);
-  };
+  
 
   return (
     <>
@@ -47,8 +16,8 @@ export default function TodoList() {
             <Todo
               key={todo.id}
               todo={todo}
-              onChange={handleChange}
-              onDelete={handleDelete}
+              onChange={onChange}
+              onDelete={onDelete}
             />
           </li>
         ))}
