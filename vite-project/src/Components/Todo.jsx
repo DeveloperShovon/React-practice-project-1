@@ -16,7 +16,7 @@ export default function Todo({ todo, onChange, onDelete }) {
           })
         }
       />
-      <button>Save</button>
+      <button onClick={() => setIsEditing(false)}>Save</button>
     </>
   ) : (
     <>
